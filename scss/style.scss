@@ -1,0 +1,524 @@
+@import "bootstrap";
+@import "font";
+@import "general";
+
+@include media-breakpoint-up(md) {
+}
+
+.title-block {
+  display: block;
+  text-align: center;
+  .h1-title-description {
+    font-weight: 600;
+    max-width: 540px;
+    margin: 15px auto;
+    font-size: 20px;
+    line-height: 27px;
+    color: rgba(255, 255, 255, 0.8);
+    @include media-breakpoint-up(md) {
+      font-size: 28px;
+      line-height: 38px;
+    }
+  }
+  .h2-title-description {
+    max-width: 570px;
+    margin: 12px auto;
+    font-size: 16px;
+    line-height: 22px;
+    color: #404040;
+    @include media-breakpoint-up(md) {
+      margin: 10px auto 40px;
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+  .h3-title-description {
+    max-width: 640px;
+    margin: 3px auto;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+
+.header {
+  padding: 20px 0;
+  z-index: 2;
+  position: relative;
+  @include media-breakpoint-up(md) {
+    padding: 25px 0 20px;
+  }
+  .header-navbar {
+    padding: 0;
+    @include media-breakpoint-up(lg) {
+      padding-right: 8%;
+    }
+    .logo-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Catamaran";
+      font-style: normal;
+      font-weight: 900;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: #ffffff;
+      .logo {
+        display: none;
+        @include media-breakpoint-up(md) {
+          display: block;
+          margin-right: 13px;
+        }
+      }
+      @include media-breakpoint-up(md) {
+        font-size: 21px;
+      }
+    }
+    .btn-contact {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+      overflow: hidden;
+      * {
+        cursor: pointer;
+      }
+      span {
+        display: none;
+      }
+      &:after {
+        content: "";
+        background: #fff;
+        border: 1px solid #ffffff;
+        height: 155px;
+        left: -75px;
+        opacity: 0.2;
+        position: absolute;
+        top: -50px;
+        transform: rotate(35deg);
+        transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
+        width: 50px;
+        z-index: 1;
+        display: block;
+      }
+      &:hover {
+        &:after {
+          left: 120%;
+          display: block;
+          transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+        }
+      }
+      @include media-breakpoint-up(md) {
+        background: #65c1b6;
+        border-radius: 30px;
+        height: 44px;
+        padding: 0 12px 0 21px;
+        span {
+          display: block;
+          margin-right: 12px;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 25px;
+          color: #ffffff;
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin: auto;
+      }
+    }
+  }
+}
+
+.section-hero {
+  position: relative;
+  padding: 100px 15px 90px;
+  margin-top: -70px;
+
+  @include media-breakpoint-up(md) {
+    padding: 156px 0 125px;
+    margin-top: -100px;
+  }
+  * {
+    z-index: 3;
+  }
+  color: #ffffff;
+  .bg-img {
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: -1;
+    display: none;
+  }
+  .bg-1 {
+    z-index: 1;
+    left: 30%;
+    top: 0px;
+    display: none;
+  }
+  .bg-2 {
+    z-index: 1;
+    right: 0;
+    top: 0px;
+    display: none;
+  }
+  .bg-3 {
+    z-index: -1;
+    top: 150px;
+    left: 0;
+    display: none;
+    max-height: calc(100% - 205px);
+    @include media-breakpoint-up(lg) {
+      max-height: calc(100% - 125px);
+      top: 80px;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .bg-img,
+    .bg-1,
+    .bg-2,
+    .bg-3 {
+      display: block;
+    }
+  }
+
+  .bg-img {
+    display: none;
+    @include media-breakpoint-up(sm) {
+      display: block;
+    }
+  }
+
+  .bg-mobile {
+    right: 0;
+    top: 0px;
+    display: block;
+    z-index: 1;
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+  .bg-mobile-hero {
+    top: 0px;
+    z-index: 0;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: -1;
+    @include media-breakpoint-up(sm) {
+      display: none;
+    }
+  }
+}
+
+.section-cards {
+  position: relative;
+  padding: 0 0 20px;
+  @include media-breakpoint-up(md) {
+    padding: 35px 0 30px;
+  }
+  .title-block {
+    max-width: 525px;
+    margin: 0 auto 32px;
+    @include media-breakpoint-up(md) {
+      margin: 0 auto 55px;
+    }
+  }
+  .bg-card {
+    position: absolute;
+    left: 0;
+    top: -5px;
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  .brand-card-cover {
+    margin-bottom: 13px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 34px;
+    }
+  }
+
+  .brand-card {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(82, 81, 81, 0.25);
+    border-radius: 10px;
+    padding: 20px 19px 28px 24px;
+    @include media-breakpoint-up(sm) {
+      padding: 17px 9px 25px;
+      height: 100%;
+      flex-direction: column;
+      border-radius: 6px;
+    }
+    .card-img-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-right: 18px;
+      @include media-breakpoint-up(sm) {
+        justify-content: center;
+        margin: 0 auto 20px;
+        max-width: 100px;
+        max-height: 100px;
+      }
+    }
+    .card-img {
+      max-width: 65px;
+      max-height: 58px;
+      @include media-breakpoint-up(sm) {
+        max-width: 94px;
+        max-height: 80px;
+      }
+    }
+    .card-info {
+      @include media-breakpoint-up(sm) {
+        text-align: center;
+      }
+      .card-name {
+        font-family: "Catamaran";
+        font-weight: 800;
+        font-size: 23px;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: #000000;
+        @include media-breakpoint-up(md) {
+          font-size: 21px;
+          line-height: 34px;
+        }
+      }
+      .card-description {
+        font-style: normal;
+        font-size: 16px;
+        line-height: 25px;
+        color: #000000;
+      }
+    }
+  }
+}
+
+.section-compay {
+  padding: 30px 0 10px;
+  @include media-breakpoint-up(md) {
+    padding: 28px 0 5px;
+  }
+  .company-block {
+    min-height: 100%;
+    height: 100px;
+    margin-bottom: 27px;
+  }
+  .campany {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      transition: 0.4s ease-in-out;
+    }
+    @include media-breakpoint-up(md) {
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+.section-contact-form {
+  position: relative;
+  padding: 60px 0 37px;
+
+  @include media-breakpoint-up(md) {
+    padding: 77px 0 22px;
+  }
+  * {
+    z-index: 3;
+  }
+  .bg-form {
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: -1;
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+  .bg-form-mobile {
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: -1;
+    display: block;
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+  .bg-5 {
+    right: 0;
+    top: 20%;
+    max-height: 80%;
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  .title-block {
+    color: #ffffff;
+    margin-bottom: 20px;
+    p {
+      color: #ffffff;
+    }
+  }
+
+  .form {
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 30px;
+
+      input,
+      textarea {
+        width: 100%;
+        background: #ffffff;
+        border-radius: 5px;
+        padding: 16px 17px;
+        font-family: "Roboto";
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: lowercase;
+        color: #212121;
+        margin-bottom: 18px;
+        border: none;
+        outline: none;
+
+        @include media-breakpoint-up(md) {
+          padding: 16px 24px;
+        }
+      }
+      textarea {
+        resize: none;
+        height: 164px;
+      }
+
+      .btn-submit {
+        margin: 5px auto 0;
+        @include media-breakpoint-up(md) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.btn-submit {
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2039ae;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 26px;
+
+  color: #ffffff;
+  position: relative;
+  height: 46px;
+  padding: 0 66px 0 36px;
+  img {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translate(0, -50%);
+    transition: 0.4s ease-in-out;
+  }
+  &:hover {
+    img {
+      right: 16px;
+    }
+  }
+}
+
+.footer {
+  background: #212121;
+  padding: 33px 15px;
+  @include media-breakpoint-up(md) {
+    padding: 42px 0 47px;
+  }
+  .footer-contant {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .footer-logo {
+      display: block;
+      font-family: "Catamaran";
+      font-style: normal;
+      font-weight: 800;
+      font-size: 14px;
+      line-height: 49px;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: #ffffff;
+      @include media-breakpoint-up(md) {
+        font-size: 21px;
+        line-height: 40px;
+        letter-spacing: 0.17em;
+        text-transform: capitalize;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+    .copyright {
+      color: #ffffff;
+      font-size: 14px;
+      line-height: 24px;
+      margin: 0;
+      @include media-breakpoint-up(md) {
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+    .go-to {
+      svg {
+        fill: #fff;
+        transition: 0.4s ease-in-out;
+      }
+
+      @include media-breakpoint-up(md) {
+        margin-right: 43px;
+        &:hover {
+          svg {
+            // fill: #0e76a8;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}
